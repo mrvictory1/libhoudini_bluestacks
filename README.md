@@ -10,3 +10,5 @@ Usage instructions for Waydroid:
 To play Blue Archive, use the libhoudini.so build in bluearchive branch, do not run the hex patching script.
 
 Games that are known to run only on libhoudini or run better on libhoudini:
+
+* [Rainbow 6 Mobile](https://play.google.com/store/apps/details?id=com.ubisoft.rainbowsixmobile.r6.fps.pvp.shooter&hl=tr): Boots on libhoudini installed by waydroid_script. Doesn't boot on libndk. Doesn't boot on this build with Waydroid or BlueStacks.
