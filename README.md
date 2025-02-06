@@ -8,3 +8,5 @@ Usage instructions for Waydroid:
 5. (optional) In `/var/lib/waydroid/waydroid_base.prop` change `ro.hardware.gralloc` to `minigbm_gbm_mesa` for improving performance and resolving graphical glitches on RDNA3 + Vulkan.
 
 To play Blue Archive, use the libhoudini.so build in bluearchive branch, do not run the hex patching script.
+
+Games that are known to run only on libhoudini or run better on libhoudini:
