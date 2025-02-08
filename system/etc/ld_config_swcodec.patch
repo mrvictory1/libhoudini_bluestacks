@@ -1,0 +1,47 @@
+--- org/ld.config.txt	2024-12-27 19:48:57.143116665 -0600
++++ patch/ld.config.txt	2024-12-27 20:35:00.820457546 -0600
+@@ -246,12 +246,18 @@
+ namespace.sphal.search.paths += /vendor_extra/${LIB}/egl
+ namespace.sphal.search.paths += /vendor_extra/${LIB}/hw
+ namespace.sphal.search.paths += /system/${LIB}
++namespace.sphal.search.paths += /system/${LIB}/arm
++namespace.sphal.search.paths += /system/${LIB}/arm/nb
++namespace.sphal.search.paths += /system/${LIB}/arm64
++namespace.sphal.search.paths += /system/${LIB}/arm64/nb
+ namespace.sphal.permitted.paths = /odm/${LIB}
+ namespace.sphal.permitted.paths += /odm_extra/${LIB}
+ namespace.sphal.permitted.paths += /vendor/${LIB}
+ namespace.sphal.permitted.paths += /vendor_extra/${LIB}
+ namespace.sphal.permitted.paths += /system/vendor/${LIB}
+ namespace.sphal.permitted.paths += /system/${LIB}
++namespace.sphal.permitted.paths += /system/${LIB}/arm
++namespace.sphal.permitted.paths += /system/${LIB}/arm64
+ namespace.sphal.asan.search.paths = /data/asan/odm/${LIB}
+ namespace.sphal.asan.search.paths += /odm/${LIB}
+ namespace.sphal.asan.search.paths += /data/asan/odm_extra/${LIB}
+@@ -270,6 +276,14 @@
+ namespace.sphal.asan.search.paths += /vendor_extra/${LIB}/hw
+ namespace.sphal.asan.search.paths += /data/asan/system/${LIB}
+ namespace.sphal.asan.search.paths += /system/${LIB}
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm
++namespace.sphal.asan.search.paths += /system/${LIB}/arm
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm/nb
++namespace.sphal.asan.search.paths += /system/${LIB}/arm/nb
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm64
++namespace.sphal.asan.search.paths += /system/${LIB}/arm64
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm64/nb
++namespace.sphal.asan.search.paths += /system/${LIB}/arm64/nb
+ namespace.sphal.asan.permitted.paths = /data/asan/odm/${LIB}
+ namespace.sphal.asan.permitted.paths += /odm/${LIB}
+ namespace.sphal.asan.permitted.paths += /data/asan/odm_extra/${LIB}
+@@ -282,6 +296,10 @@
+ namespace.sphal.asan.permitted.paths += /system/vendor/${LIB}
+ namespace.sphal.asan.permitted.paths += /data/asan/system/${LIB}
+ namespace.sphal.asan.permitted.paths += /system/${LIB}
++namespace.sphal.asan.permitted.paths += /data/asan/system/${LIB}/arm
++namespace.sphal.asan.permitted.paths += /system/${LIB}/arm
++namespace.sphal.asan.permitted.paths += /data/asan/system/${LIB}/arm64
++namespace.sphal.asan.permitted.paths += /system/${LIB}/arm64
+ namespace.sphal.links = system,vndk
+ namespace.sphal.link.system.shared_libs = libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-i686-android.so:libclang_rt.asan-x86_64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so
+ namespace.sphal.link.system.shared_libs += libc.so

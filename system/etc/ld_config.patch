@@ -1,0 +1,117 @@
+--- org/ld.config.txt	2024-12-27 19:48:40.406513097 -0600
++++ patch/ld.config.txt	2024-12-27 20:28:21.597099382 -0600
+@@ -58,7 +58,13 @@
+ namespace.default.permitted.paths += /data
+ namespace.default.permitted.paths += /mnt/expand
+ namespace.default.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
++namespace.default.permitted.paths += /apex/com.android.art/${LIB}
+ namespace.default.permitted.paths += /system/${LIB}/bootstrap
++namespace.default.permitted.paths += /system/${LIB}
++namespace.default.permitted.paths += /system/${LIB}/arm
++namespace.default.permitted.paths += /system/${LIB}/arm/nb
++namespace.default.permitted.paths += /system/${LIB}/arm64
++namespace.default.permitted.paths += /system/${LIB}/arm64/nb
+ namespace.default.permitted.paths += /system/product/${LIB}
+ namespace.default.asan.search.paths = /data/asan/system/${LIB}
+ namespace.default.asan.search.paths += /system/${LIB}
+@@ -117,8 +123,14 @@
+ namespace.default.asan.permitted.paths += /data/asan/mnt/expand
+ namespace.default.asan.permitted.paths += /mnt/expand
+ namespace.default.asan.permitted.paths += /apex/com.android.runtime/${LIB}/bionic
++namespace.default.asan.permitted.paths += /apex/com.android.art/${LIB}
+ namespace.default.asan.permitted.paths += /data/asan/system/${LIB}/bootstrap
+ namespace.default.asan.permitted.paths += /system/${LIB}/bootstrap
++namespace.default.asan.permitted.paths += /system/${LIB}
++namespace.default.asan.permitted.paths += /system/${LIB}/arm
++namespace.default.asan.permitted.paths += /system/${LIB}/arm/nb
++namespace.default.asan.permitted.paths += /system/${LIB}/arm64
++namespace.default.asan.permitted.paths += /system/${LIB}/arm64/nb
+ namespace.default.asan.permitted.paths += /data/asan/system/product/${LIB}
+ namespace.default.asan.permitted.paths += /system/product/${LIB}
+ namespace.default.links = com_android_adbd,com_android_i18n,default,com_android_art,com_android_resolv,com_android_tethering,com_android_neuralnetworks,com_android_os_statsd
+@@ -514,11 +526,17 @@
+ namespace.sphal.search.paths += /vendor_extra/${LIB}
+ namespace.sphal.search.paths += /vendor_extra/${LIB}/egl
+ namespace.sphal.search.paths += /vendor_extra/${LIB}/hw
++namespace.sphal.search.paths += /system/${LIB}/arm
++namespace.sphal.search.paths += /system/${LIB}/arm/nb
++namespace.sphal.search.paths += /system/${LIB}/arm64
++namespace.sphal.search.paths += /system/${LIB}/arm64/nb
+ namespace.sphal.permitted.paths = /odm/${LIB}
+ namespace.sphal.permitted.paths += /odm_extra/${LIB}
+ namespace.sphal.permitted.paths += /vendor/${LIB}
+ namespace.sphal.permitted.paths += /vendor_extra/${LIB}
+ namespace.sphal.permitted.paths += /system/vendor/${LIB}
++namespace.sphal.permitted.paths += /system/${LIB}/arm
++namespace.sphal.permitted.paths += /system/${LIB}/arm64
+ namespace.sphal.asan.search.paths = /data/asan/odm/${LIB}
+ namespace.sphal.asan.search.paths += /odm/${LIB}
+ namespace.sphal.asan.search.paths += /data/asan/odm_extra/${LIB}
+@@ -529,6 +547,14 @@
+ namespace.sphal.asan.search.paths += /vendor/${LIB}/egl
+ namespace.sphal.asan.search.paths += /data/asan/vendor/${LIB}/hw
+ namespace.sphal.asan.search.paths += /vendor/${LIB}/hw
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm
++namespace.sphal.asan.search.paths += /system/${LIB}/arm
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm/nb
++namespace.sphal.asan.search.paths += /system/${LIB}/arm/nb
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm64
++namespace.sphal.asan.search.paths += /system/${LIB}/arm64
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm64/nb
++namespace.sphal.asan.search.paths += /system/${LIB}/arm64/nb
+ namespace.sphal.asan.search.paths += /data/asan/vendor_extra/${LIB}
+ namespace.sphal.asan.search.paths += /vendor_extra/${LIB}
+ namespace.sphal.asan.search.paths += /data/asan/vendor_extra/${LIB}/egl
+@@ -545,6 +571,10 @@
+ namespace.sphal.asan.permitted.paths += /vendor_extra/${LIB}
+ namespace.sphal.asan.permitted.paths += /data/asan/system/vendor/${LIB}
+ namespace.sphal.asan.permitted.paths += /system/vendor/${LIB}
++namespace.sphal.asan.permitted.paths += /data/asan/system/${LIB}/arm
++namespace.sphal.asan.permitted.paths += /system/${LIB}/arm
++namespace.sphal.asan.permitted.paths += /data/asan/system/${LIB}/arm64
++namespace.sphal.asan.permitted.paths += /system/${LIB}/arm64
+ namespace.sphal.links = rs,default,vndk,com_android_neuralnetworks
+ namespace.sphal.link.rs.shared_libs = libRS_internal.so
+ namespace.sphal.link.default.shared_libs = libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-i686-android.so:libclang_rt.asan-x86_64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so
+@@ -1560,11 +1590,17 @@
+ namespace.sphal.search.paths += /vendor_extra/${LIB}
+ namespace.sphal.search.paths += /vendor_extra/${LIB}/egl
+ namespace.sphal.search.paths += /vendor_extra/${LIB}/hw
++namespace.sphal.search.paths += /system/${LIB}/arm
++namespace.sphal.search.paths += /system/${LIB}/arm/nb
++namespace.sphal.search.paths += /system/${LIB}/arm64
++namespace.sphal.search.paths += /system/${LIB}/arm64/nb
+ namespace.sphal.permitted.paths = /odm/${LIB}
+ namespace.sphal.permitted.paths += /odm_extra/${LIB}
+ namespace.sphal.permitted.paths += /vendor/${LIB}
+ namespace.sphal.permitted.paths += /vendor_extra/${LIB}
+ namespace.sphal.permitted.paths += /system/vendor/${LIB}
++namespace.sphal.permitted.paths += /system/${LIB}/arm
++namespace.sphal.permitted.paths += /system/${LIB}/arm64
+ namespace.sphal.asan.search.paths = /data/asan/odm/${LIB}
+ namespace.sphal.asan.search.paths += /odm/${LIB}
+ namespace.sphal.asan.search.paths += /data/asan/odm_extra/${LIB}
+@@ -1581,6 +1617,14 @@
+ namespace.sphal.asan.search.paths += /vendor_extra/${LIB}/egl
+ namespace.sphal.asan.search.paths += /data/asan/vendor_extra/${LIB}/hw
+ namespace.sphal.asan.search.paths += /vendor_extra/${LIB}/hw
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm
++namespace.sphal.asan.search.paths += /system/${LIB}/arm
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm/nb
++namespace.sphal.asan.search.paths += /system/${LIB}/arm/nb
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm64
++namespace.sphal.asan.search.paths += /system/${LIB}/arm64
++namespace.sphal.asan.search.paths += /data/asan/system/${LIB}/arm/nb64
++namespace.sphal.asan.search.paths += /system/${LIB}/arm64/nb
+ namespace.sphal.asan.permitted.paths = /data/asan/odm/${LIB}
+ namespace.sphal.asan.permitted.paths += /odm/${LIB}
+ namespace.sphal.asan.permitted.paths += /data/asan/odm_extra/${LIB}
+@@ -1591,6 +1635,8 @@
+ namespace.sphal.asan.permitted.paths += /vendor_extra/${LIB}
+ namespace.sphal.asan.permitted.paths += /data/asan/system/vendor/${LIB}
+ namespace.sphal.asan.permitted.paths += /system/vendor/${LIB}
++namespace.sphal.asan.permitted.paths += /data/asan/system/${LIB}/arm
++namespace.sphal.asan.permitted.paths += /system/${LIB}/arm
+ namespace.sphal.links = rs,default,vndk,com_android_neuralnetworks
+ namespace.sphal.link.rs.shared_libs = libRS_internal.so
+ namespace.sphal.link.default.shared_libs = libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libRS.so:libandroid_net.so:libbinder_ndk.so:libc.so:libcgrouprc.so:libclang_rt.asan-i686-android.so:libclang_rt.asan-x86_64-android.so:libdl.so:liblog.so:libm.so:libmediandk.so:libnativewindow.so:libneuralnetworks.so:libselinux.so:libsync.so:libvndksupport.so:libvulkan.so
