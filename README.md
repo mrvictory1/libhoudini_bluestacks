@@ -1,3 +1,5 @@
+> [!NOTE]  
+> Waydroid now uses Android 13, the libhoudini build for Android 13 installed by waydroid_script does not have performance loss on AMD CPUs. This repository is now obsolete however you may still use it if you are on Android 11.
 # libhoudini_bluestacks
 libhoudini.so + libnb.so from BlueStacks. **libnb.so library resolves performance degradation on AMD processors.** On Waydroid, for games that are not compatible with libndk.so, this can be used instead. libhoudini initialization is different on BlueStacks compared to houdini build installed by waydroid_script, so /etc/binfmt_misc from waydroid_script's houdini build has been included. This does not supersede waydroid_script's houdini build because there are some games ie. Rainbow 6 Mobile that do not run on this houdini build, not even on BlueStacks.
 Usage instructions for Waydroid:
